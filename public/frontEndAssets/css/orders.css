@@ -1,0 +1,292 @@
+.breadcrumb {
+	padding: 0;
+}
+
+.order_list {
+	padding: 10px 15px 0;
+	border-bottom: 5px solid #eaeded;
+}
+
+.order_list p {
+	border-bottom: 2px solid #eaeded;
+	padding-bottom: 8px;
+	margin-bottom: .5rem;
+}
+
+.order_list p:last-child {
+	border-bottom: none;
+	text-align: center;
+	margin: 3px 0;
+}
+
+.order_number {
+	padding: 10px 15px;
+}
+
+.order_details_section {
+	padding: 10px 15px;
+}
+
+.order_summary p,
+.order_details_section .order_on p,
+.ship_details p,
+.ship_product_details p {
+	margin-bottom: 1px;
+}
+
+.ship_details,
+.ship_product_details,
+.review {
+	border: 2px solid #eaeded;
+	border-radius: 5px;
+}
+
+.ship_details,
+.ship_product_details {
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.review {
+	padding: 10px 20px;
+}
+
+.write_review p {
+	margin-bottom: 2rem;
+}
+
+.write_review p:last-child {
+	margin-bottom: 0;
+}
+
+.orders .card {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	z-index: 99;
+}
+
+.progressbar {
+	list-style: none;
+}
+
+.progressbar .cancel {
+	color: red;
+}
+
+.error_msg{
+	border-width: 2px 2px 2px 15px;
+	border-style: solid;
+	border-color: #ffa707;
+	border-radius: 8px;
+	padding: 10px 15px 0px;
+	margin-bottom: 10px;
+}
+
+#order_in_mobile {
+	display: none;
+	padding: 5px 0;
+	color: rgb(118, 118, 148);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.mobile{
+	color: black;
+	background-color: #FFDEFA;
+}
+
+.cancel_single_order{
+	cursor: pointer;
+}
+
+.star{
+	margin: 10px 0 35px;
+}
+
+.rating-icon{
+	direction: rtl;
+}
+
+.rating-icon input{
+	display: none;
+}
+
+.rating-icon label{
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	cursor: pointer;
+}
+
+.rating-icon label::before{
+	content: "\2605";
+	color: #9b8e7d;
+	position: absolute;
+	font-size: 50px;
+	top: -25px;
+	left: 0;
+	display: inline-block;
+	width: 50px;
+	text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.rating-icon label:hover:after,
+.rating-icon label:hover ~ label::after,
+.rating-icon input:checked ~ label::after{
+	content: "\2605";
+	color: #9b8e7d;
+	position: absolute;
+	font-size: 50px;
+	top: -25px;
+	left: 0;
+	display: inline-block;
+	width: 50px;
+	color: #cccc1b;
+	text-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+@media (min-width: 992px) {
+	.mobile{
+		display: none;
+	}
+	.progressbar-track {
+		width: 90%;
+		margin: 30px 0 35px;
+		color: green;
+		/* margin-left: 20px; */
+	}
+
+	.progressbar {
+		list-style: none;
+		display: flex;
+		justify-content: left;
+	}
+
+	.progressbar li {
+		width: 100%;
+		text-align: left;
+		position: relative;
+	}
+
+	.progressbar li::before {
+		background-image: url('/media/check.png');
+		background-size: 30px 30px;
+		width: 30px;
+		height: 30px;
+		display: block;
+		margin: 0 auto 5px 15px;
+		content: "";
+	}
+
+	.progressbar li::after {
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background-color: green;
+		top: 15px;
+		left: 40px;
+		z-index: -1;
+	}
+
+	.progressbar li:last-of-type::after{
+		content: none;
+	}
+
+	.progressbar li span {
+		position: absolute;
+		text-align: center;
+		top: 60px;
+		left: 0;
+	}
+
+	.progressbar .cancel::before {
+		background-image: url('/media/remove.png');
+	}
+}
+
+@media (max-width: 992px) {
+	.desk{
+		display: none;
+	}
+
+	#order_in_mobile {
+		display: block;
+	}
+
+	.progressbar-track {
+		width: 100%;
+		display: none;
+	}
+
+	.progressbar-track.active {
+		display: block;
+	}
+
+	.progressbar {
+		margin-bottom: 20px;
+	}
+
+	.progressbar li {
+		width: 100%;
+		line-height: 80px;
+		position: relative;
+		left: 50px;
+	}
+
+	.progressbar li::before {
+		background-image: url('/media/check.png');
+		background-size: 30px 30px;
+		position: absolute;
+		left: -50px;
+		top: 30px;
+		width: 30px;
+		height: 30px;
+		content: "";
+		z-index: 99;
+	}
+
+	.progressbar li::after {
+		position: absolute;
+		left: -36px;
+		bottom: -30px;
+		content: "";
+		width: 2px;
+		height: 80%;
+		background-color: green;
+	}
+
+	.progressbar li:last-child:after {
+		content: none;
+	}
+
+	.progressbar li:last-of-type::after{
+		content: none;
+	}
+
+	.progressbar .cancel::before {
+		background-image: url('/media/remove.png');
+	}
+
+	.progressbar li span {
+		position: absolute;
+		/* text-align: center; */
+		top: 25px;
+		left: 0;
+	}
+}
+
+@media (min-width: 786px) {
+	.m_mode_ {
+		display: none;
+	}
+
+	.ship_img img {
+		width: 100px;
+	}
+}
+@media (max-width: 786px) {
+	.d_mode_ {
+		display: none;
+	}
+}

@@ -1,0 +1,186 @@
+.account_section, .addresses{
+    margin-top: 20px;
+}
+
+.account_section .card{
+     height: 110px;
+}
+
+.account_section .card, .addresses .card{
+    margin-bottom: 5px;
+    padding: 15px 10px;
+    border-radius: 8px;
+}
+
+
+.addresses_form .card{
+    padding: 20px;
+    width: 70%;
+}
+
+.addresses .card{
+    padding: 20px 20px 15px;
+    height: 300px;
+}
+
+.addresses .card .linkss{
+   position: absolute;
+   bottom: 5px;
+}
+
+.addresses .new_address{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px dashed #000;
+}
+
+.account_section .card:hover{
+   background-color: #E6DFDF;
+}
+
+.account_section .content .text{
+     margin-left: 5px;
+}
+
+.account_section .content h5, .addresses h5, .new_address h3{
+    color: #000;
+     margin: 0;
+}
+
+.new_address i{
+    color: rgb(83, 67, 67);
+}
+
+.account_section .content p, .addresses p {
+    color: rgb(49, 26, 26);
+}
+
+.addresses li{
+    font-weight: 500;
+}
+
+.before-footer{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.before-footer .row{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.before-footer .f-b-item{
+    padding: 25px 0;
+    border-left: 2px solid #E6DFDF;
+}
+
+.before-footer .card{
+    border: 2px solid #E6DFDF;
+    border-radius: 0;
+}
+
+.add-ticket a{
+  text-align: center;
+}
+
+.reply_ticket{
+    margin:20px 0;
+}
+
+.chart_section{
+    margin-bottom: 20px;
+}
+
+.formsection{
+    margin-top: 30px;
+    border-top: 2px solid black;
+}
+
+.review-item{
+    margin-bottom: 10px;
+}
+
+.user-img input[type=file]{
+    display: none;
+}
+
+.user-img{
+    width: 15%;
+    text-align: center;
+}
+
+
+.reply_ticket .admin{
+    background-color: #EDD2F3;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.reply_ticket .doc{
+    cursor: pointer;
+}
+
+.reply_ticket .customer{
+    background-color: #95D1CC;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.imgsection img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+@media (max-width:772px){
+    .before-footer .f-b-item{
+    padding: 10px 0;
+    border-bottom: 2px solid #E6DFDF;
+}
+
+.user-img{
+    width: 100%;
+    text-align: center;
+}
+
+.userlogin .container{
+    margin: 0;
+    padding: 0;
+}
+
+.userlogin h5{
+   font-size: 15px;
+}
+
+.userlogin .reply_ticket{
+    margin: 6px;
+}
+
+.userlogin p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.cc{
+    margin-bottom: 10px;
+}
+
+.addresses_form .card{
+    padding: 20px;
+    width: 100%;
+}
+
+.before-footer .card{
+    border: 2px solid #E6DFDF;
+    border-radius: 0;
+}
+
+}
+
+@media (min-width:991px){
+    .account-row{
+        margin-bottom: 20px;
+    }
+}

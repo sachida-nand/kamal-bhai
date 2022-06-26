@@ -1,0 +1,127 @@
+@extends('layouts.frondEndApp')
+@section('title-section')
+Single Order | {{ @config('constants.site_name') }}
+@endsection
+@section('content')
+<div class="orders mt-4">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Your Account</a></li>
+                <li class="breadcrumb-item"><a href="#">Your Orders</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Order Details</li>
+            </ol>
+        </nav>
+        <div class="heading mb-2">
+            <h3>Order Details</h3>
+        </div>
+        <div class="card">
+            <div class="order_details_section">
+                <div class="order_num order_on mt-3">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <p><b>Order # {{ $Order->order_id }}</b></p>
+                        </div>
+                        <div class="order_on col-lg-6 col-sm-12 text-lg-right">
+                            <p><b>Expected Delivery</b></p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order_on">
+                    <p><b>Ordered on: {{ date_format($Order->created_at,"j F Y") }}</b></p>
+                </div>
+
+                <div class="order_status">
+                    <p id="order_in_mobile">Click here check Status <i id="icon" class="fas fa-angle-up"></i></p>
+
+                    <div class="progressbar-track" id="ss">
+                        <ul class="progressbar">
+                            <li class="step-2">Ordered <span>22/05/2021</span></li>
+                            <li class="step-1">Packed <span>22/05/2021</span></li>
+                            <li class="step-3">Shipped <span>22/05/2021</span></li>
+                            <li class="step-4">Out for Delivery <span>22/05/2021</span></li>
+                            <li class="step-5">Delivered <span>22/05/2021</span></li>
+                            <li class="step-6 cancel">Canceled <span>22/05/2021</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ship_details">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h5>Shipping Address</h5>
+                            <p>{{ $Order->name}}</p>
+                            <p>{{$Order->address_one}}</p>
+                            <p>{{$Order->address_two}}</p>
+                            <p>{{$Order->landmark}}</p>
+                            <p>{{$Order->city.', '.$Order->district.'-'.$Order->pincode}}</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <h5>Payment Method</h5>
+                            <p>
+                                @if ($Order->payment_type == 'cashondelivery_cod')
+                                Cash on Delivery (COD)
+                                @elseif ($Order->payment_type == 'online_esewa')
+                                eSewa (Online)
+                                @endif
+                            </p>
+                        </div>
+                        <div class="col-lg-4 col-sm 12 ">
+                            <div class="order_summary">
+                                <h5>Order Summary</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p>Item(s) Subtotal:</p>
+                                        <p>Shipping:</p>
+                                        <p>Tax:</p>
+                                        <p>Total:</p>
+                                        <p><b>Grand Total:</b></p>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <p>Rs. 200000.00</p>
+                                        <p>Rs. 300.00</p>
+                                        <p>Rs. 300.00</p>
+                                        <p>Rs. 200600.00</p>
+                                        <p><b>Rs. 200600.00</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @foreach ($Order->itemDetails as $Item)
+                <div class="ship_product_details">
+                    <div class="ship_product_item">
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="pl-1 ship_img">
+                                            <img src="1.jpg" alt="" width="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-10">
+                                        <div class="col-10">
+                                            <p style="margin-bottom: 0;">saman hai</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-12 mb-3 mt-4 write_review text-center">
+                                <p><a href="#" class="review">Write a product review</a></p>
+                                <p><a href="#" class="review">Cancel Order For this Product</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
